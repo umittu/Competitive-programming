@@ -11,17 +11,16 @@ a=A/float(1000)
 if a<0.1:
     B=0
 elif 0.1<=a<=5:
-    b=a*10
-    if b<10:
-        B=str(b)
-        B="0"+b
-    else:
-        B=b
-
+    B=a*10
 elif 6<=a<=3:
     B=a+50
 elif 35<=a<=70:
     B=((a-30)/5)+80
 else:
     B=89
-print("VV値は",B,"mです。")
+
+V=int(B)
+if V<10:
+    V=str(B)
+    V="0"+B
+print("VV値は",V,"mです。")
