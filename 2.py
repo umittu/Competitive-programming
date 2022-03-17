@@ -7,20 +7,24 @@
 #いま、あなたに指定の距離をメートルで与えるので、上記のルールに従って計算されるVV値の値を出力しなさい。
 
 A=int(input("視程を入力してください(m)："))
-a=A/float(1000)
+a=A/1000
 if a<0.1:
     B=0
+    print("VV値は",B,"mです。")
 elif 0.1<=a<=5:
     B=a*10
+    if B<10:
+        b=str(B)
+        C="0"+b
+        print("VV値は",C,"mです。")
+    else:
+        print("VV値は",B,"mです。")
 elif 6<=a<=3:
     B=a+50
+    print("VV値は",B,"mです。")
 elif 35<=a<=70:
     B=((a-30)/5)+80
+    print("VV値は",B,"mです。")
 else:
     B=89
-
-V=int(B)
-if V<10:
-    V=str(B)
-    V="0"+B
-print("VV値は",V,"mです。")
+    print("VV値は",B,"mです。")
