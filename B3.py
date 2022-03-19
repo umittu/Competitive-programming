@@ -8,30 +8,21 @@ AtCoder社特製のトランプでは、各カードにアルファベット小�
 3.2つの列が指し示す文字列が同じであれば勝ち、同じでなければ負けです。
 手順1.で並べられた2つの列が指し示す2つの文字列が与えられるので、適切に@に置き換えて、このゲームに勝つことができるかを判定するプログラムを書いてください。
 """
-S,T = map(str,input().split())
 
 
-for i in range(len(S)):
-    if S[i] == '@' and T[i] == 'a':
-        S[i].replace(S[i],'a')
-    elif S[i] == '@' and T[i] == 't':
-        S[i] == 't'
-    elif S[i] == '@' and T[i] == 'c':
-        S[i] == 'c'
-    elif S[i] == '@' and T[i] == 'o':
-        S[i] == 'o'
-    elif S[i] == '@' and T[i] == 'd':
-        S[i] == 'd'
-    elif S[i] == '@' and T[i] == 'e':
-        S[i] == 'e'
-    elif S[i] == '@' and T[i] == 'r':
-        S[i] == 'r'
+s = list(input())
+t = list(input())
 
-print(S)
-print(T)
+r = ['a','t','c','o','d','e','r']
 
-if S == T:
-    print("You will win")
+for i in range(len(s)):
+    if s[i] == '@' and t[i] in r:
+        t[i] = '@'
+    elif t[i] == '@' and s[i] in r:
+        s[i] = '@'
+
+if s == t:
+    print("You can win")
 else:
     print("You will lose")
         
