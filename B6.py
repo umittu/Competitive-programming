@@ -24,5 +24,4 @@ else:
         y = z
         z = w
 mod = w % 10007
-
 print(mod)
